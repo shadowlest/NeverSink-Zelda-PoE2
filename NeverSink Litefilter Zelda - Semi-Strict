@@ -211,7 +211,7 @@ MinimapIcon 1 Cyan Diamond
 #PlayAlertSound 2 300
 CustomAlertSound "look.mp3" 300
 
-Show 
+Hide 
 Rarity <= Magic
 BaseType == "Breach Ring"
 SetTextColor 0 240 190
@@ -221,7 +221,7 @@ PlayEffect Cyan Temp
 
 # Chancing bases
 Show 
-Rarity Normal
+Rarity <= Magic 
 BaseType == "Sapphire Ring" "Stellar Amulet" "Heavy Belt"
 SetBorderColor 0 240 190
 SetFontSize 40
@@ -248,9 +248,26 @@ MinimapIcon 1 Cyan Diamond
 PlayEffect Cyan
 PlayAlertSound 2 300
 
-# Special B Tier - Any Runes and Charms
+# Special B Tier - Any Runes
+Hide 
+BaseType " Rune"
+SetTextColor 0 240 190
+PlayEffect Cyan Temp
+
+#Special S Tier - Charms
 Show 
-BaseType " Rune" " Charm"
+BaseType == "Golden Charm"
+Class "Charm"
+SetTextColor 255 255 255 255
+SetBorderColor 255 255 255 255
+SetBackgroundColor 240 90 35
+CustomAlertSound "hey_listen.mp3" 300
+MinimapIcon 1 Yellow Circle
+SetFontSize 45
+
+# Special B Tier - Any Runes and Charms
+Hide 
+Class "Charm"
 SetTextColor 0 240 190
 PlayEffect Cyan Temp
 
@@ -491,6 +508,7 @@ MinimapIcon 1 Yellow Diamond
 Show
 Rarity Normal
 Class "Rings" "Amulets"
+AreaLevel < 65
 SetFontSize 40
 
 Show
@@ -501,11 +519,13 @@ SetFontSize 35
 
 Show
 Rarity Normal
+AreaLevel < 65
 Class "Belts"
 
 Show
 Class "Rings" "Amulets" "Belts"
 Rarity Magic
+AreaLevel < 65
 SetFontSize 40
 
 #--------------------------
@@ -516,24 +536,28 @@ Show
 Sockets > 0
 Rarity Normal
 SetBorderColor 200 200 200
+AreaLevel < 65
 SetFontSize 35
 
 Show
 Quality > 0
 Rarity Normal
 SetBorderColor 200 200 200
+AreaLevel < 65
 SetFontSize 35
 
 Show
 Sockets > 0
 Rarity Magic
 SetBorderColor 0 0 200
+AreaLevel < 65
 SetFontSize 35
 
 Show
 Quality > 0
 Rarity Magic
 SetBorderColor 0 0 200
+AreaLevel < 65
 SetFontSize 35
 
 #--------------------------
@@ -562,13 +586,14 @@ AreaLevel > 70
 Rarity <= Magic
 Class "Flasks"
 
-Show
+Hide
 BaseType == "Amethyst Ring" "Attuned Wand" "Breach Ring" "Chiming Staff" "Expert Altar Robe" "Expert Barrier Quarterstaff" "Expert Bombard Crossbow" "Expert Brigand Mace" "Expert Cloaked Mail" "Expert Construct Hammer" "Expert Crumbling Maul" "Expert Doubled Gauntlets" "Expert Dualstring Bow" "Expert Dyad Crossbow" "Expert Edged Buckler" "Expert Elite Greathelm" "Expert Feathered Sandals" "Expert Feathered Targe" "Expert Feathered Tiara" "Expert Forlorn Crossbow" "Expert Goldcast Cuffs" "Expert Heavy Crown" "Expert Hexer's Robe" "Expert Hunter Hood" "Expert Hunting Shoes" "Expert Intricate Gloves" "Expert Iron Cuirass" "Expert Keth Raiment" "Expert Leaden Greathammer" "Expert Lizardscale Boots" "Expert Moulded Mitts" "Expert Oak Greathammer" "Expert Omen Crest Shield" "Expert Pathfinder Coat" "Expert Pelt Leggings" "Expert Pelt Mantle" "Expert Plumed Focus" "Expert Rogue Armour" "Expert Sacrificial Mantle" "Expert Scale Mail" "Expert Scalper's Jacket" "Expert Serpentscale Coat" "Expert Shaman Mantle" "Expert Shielded Helm" "Expert Slicing Quarterstaff" "Expert Spined Bracers" "Expert Spiral Wraps" "Expert Stacked Sabatons" "Expert Steel Plate" "Expert Stone Greaves" "Expert Stone Tower Shield" "Expert Studded Vest" "Expert Tribal Mask" "Expert Vaal Cuirass" "Expert Warpick" "Expert Waxed Jacket" "Expert Wayfarer Jacket" "Expert Zealot Bow" "Omen Sceptre" "Plate Belt" "Primed Quiver" "Prismatic Ring" "Rattling Sceptre" "Siphoning Wand" "Solar Amulet" "Voltaic Staff"
 Rarity <= Magic
+AreaLevel < 65
 
-Hide
+Show
 AreaLevel >= 78
-Rarity <= Magic
+Rarity = Rare
 Class "Helmets" "Boots" "Gloves" "Shields" "Foci" "One Hand Maces" "Two Hand Maces" "Quarterstaves" "Bows" "Crossbows" "Body Armours" "Wands" "Sceptres" "Staves" "Quivers"
 
 Hide
@@ -605,7 +630,7 @@ Class "Quivers"
 Hide
 AreaLevel > 70
 Rarity <= Normal
-DropLevel < 50
+#DropLevel < 50
 Class "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Quarterstaves" "Bows" "Crossbows"
 
 #--------------------------
